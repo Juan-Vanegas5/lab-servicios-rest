@@ -1,0 +1,668 @@
+{
+  "info": {
+    "name": "Muebles de los Alpes - Servicios REST",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base",
+      "value": "http://localhost:8080/mueblesdelosalpes.servicios/webresources"
+    }
+  ],
+  "item": [
+    {
+      "name": "Catalogo",
+      "item": [
+        {
+          "name": "Listar muebles",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base}}/Catalogo/muebles",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "Catalogo",
+                "muebles"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Consultar mueble 1",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base}}/Catalogo/muebles/1",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "Catalogo",
+                "muebles",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Agregar mueble",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base}}/Catalogo/agregar",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "Catalogo",
+                "agregar"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nombre\": \"Mesa ovalada estilo griego\",\n  \"descripcion\": \"Mesa ovalada con un elegante estilo griego\",\n  \"tipo\": \"Interior\",\n  \"precio\": 140000,\n  \"cantidad\": 2,\n  \"imagen\": \"mesaOvalada\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Actualizar mueble 9",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base}}/Catalogo/actualizar/9",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "Catalogo",
+                "actualizar",
+                "9"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nombre\": \"Mesa ovalada caoba\",\n  \"descripcion\": \"Mesa ovalada con un elegante estilo griego\",\n  \"tipo\": \"Interior\",\n  \"precio\": 150000,\n  \"cantidad\": 3,\n  \"imagen\": \"mesaOvalada\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Remover un ejemplar del mueble 9",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base}}/Catalogo/removerEjemplar/9",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "Catalogo",
+                "removerEjemplar",
+                "9"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Eliminar mueble 9",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base}}/Catalogo/eliminar/9",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "Catalogo",
+                "eliminar",
+                "9"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "CarroCompras",
+      "item": [
+        {
+          "name": "Agregar muebles al carrito",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base}}/CarroCompras/agregar",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "CarroCompras",
+                "agregar"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"referencia\": 1\n  },\n  {\n    \"referencia\": 1\n  },\n  {\n    \"referencia\": 4\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Ver muebles del carrito",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base}}/CarroCompras/muebles",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "CarroCompras",
+                "muebles"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Resumen del carrito",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base}}/CarroCompras/resumen",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "CarroCompras",
+                "resumen"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Quitar un mueble del carrito",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base}}/CarroCompras/borrar",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "CarroCompras",
+                "borrar"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"referencia\": 4\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Comprar (cliente jvanegas)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base}}/CarroCompras/comprar/jvanegas",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "CarroCompras",
+                "comprar",
+                "jvanegas"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Vaciar carrito",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base}}/CarroCompras/limpiar",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "CarroCompras",
+                "limpiar"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Registro",
+      "item": [
+        {
+          "name": "Listar clientes",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base}}/Registro/clientes",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "Registro",
+                "clientes"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Consultar cliente",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base}}/Registro/clientes/jvanegas",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "Registro",
+                "clientes",
+                "jvanegas"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Registrar cliente",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base}}/Registro/registrar",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "Registro",
+                "registrar"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"login\": \"jvanegas\",\n  \"contraseña\": \"clave123\",\n  \"nombreCompleto\": \"Juan Vanegas\",\n  \"tipoDocumento\": \"CC\",\n  \"documento\": 1012345678,\n  \"telefonoLocal\": 6012345,\n  \"telefonoCelular\": 3001234567,\n  \"direccion\": \"Cra 9 # 45-12\",\n  \"correo\": \"jv@correo.com\",\n  \"profesion\": \"Ingeniero\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Actualizar cliente",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base}}/Registro/actualizar/jvanegas",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "Registro",
+                "actualizar",
+                "jvanegas"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nombreCompleto\": \"Juan Vanegas\",\n  \"tipoDocumento\": \"CC\",\n  \"documento\": 1012345678,\n  \"telefonoLocal\": 6012345,\n  \"telefonoCelular\": 3001234567,\n  \"direccion\": \"Cra 9 # 45-12\",\n  \"correo\": \"nuevo@correo.com\",\n  \"profesion\": \"Ingeniero\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Eliminar cliente",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base}}/Registro/eliminar/jvanegas",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "Registro",
+                "eliminar",
+                "jvanegas"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Seguridad",
+      "item": [
+        {
+          "name": "Ingresar (correcto)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base}}/Seguridad/ingresar",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "Seguridad",
+                "ingresar"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"login\": \"client\",\n  \"contrasena\": \"clientclient\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Ingresar (contraseña errada)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base}}/Seguridad/ingresar",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "Seguridad",
+                "ingresar"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"login\": \"client\",\n  \"contrasena\": \"mala\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Vendedores",
+      "item": [
+        {
+          "name": "Listar vendedores",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base}}/Vendedores/vendedores",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "Vendedores",
+                "vendedores"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Consultar vendedor 1",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base}}/Vendedores/vendedores/1",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "Vendedores",
+                "vendedores",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Agregar vendedor",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base}}/Vendedores/agregar",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "Vendedores",
+                "agregar"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nombres\": \"Laura\",\n  \"apellidos\": \"Gómez\",\n  \"salario\": 1500000,\n  \"comisionVentas\": 120000,\n  \"perfil\": \"Asesora comercial\",\n  \"foto\": \"vendedor1\",\n  \"experiencia\": [\n    {\n      \"id\": 5,\n      \"nombreEmpesa\": \"Hogar SAS\",\n      \"cargo\": \"Vendedora\",\n      \"descripcion\": \"Ventas de muebles\",\n      \"ano\": 2021\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Actualizar vendedor 5",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base}}/Vendedores/actualizar/5",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "Vendedores",
+                "actualizar",
+                "5"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nombres\": \"Laura\",\n  \"apellidos\": \"Gómez Ruiz\",\n  \"salario\": 1600000,\n  \"comisionVentas\": 120000,\n  \"perfil\": \"Asesora comercial\",\n  \"foto\": \"vendedor1\",\n  \"experiencia\": [\n    {\n      \"id\": 5,\n      \"nombreEmpesa\": \"Hogar SAS\",\n      \"cargo\": \"Vendedora\",\n      \"descripcion\": \"Ventas de muebles\",\n      \"ano\": 2021\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Eliminar vendedor 5",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base}}/Vendedores/eliminar/5",
+              "host": [
+                "{{base}}"
+              ],
+              "path": [
+                "Vendedores",
+                "eliminar",
+                "5"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
